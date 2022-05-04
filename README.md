@@ -19,7 +19,6 @@ Deploy prometheus [node exporter](https://github.com/prometheus/node_exporter) u
 
 - Ansible >= 2.7 (It might work on previous versions, but we cannot guarantee it)
 - gnu-tar on Mac deployer host (`brew install gnu-tar`)
-- Passlib is required when using the basic authentication feature (`pip install passlib[bcrypt]`)
 
 ## Role Variables
 
@@ -75,7 +74,7 @@ Before running node_exporter role, the user needs to provision their own certifi
       cert_file: /etc/node_exporter/tls.cert
       key_file: /etc/node_exporter/tls.key
     node_exporter_basic_auth_users:
-      randomuser: examplepassword 
+      randomuser: hashed_examplepassword
 ```
 
 
